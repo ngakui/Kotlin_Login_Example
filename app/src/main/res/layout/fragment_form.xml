@@ -64,18 +64,6 @@
             android:background="#00008b"
             android:enabled="false" />
 
-        <RadioButton
-
-            android:id="@+id/remember_password"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:text="@string/remember_password"
-            android:textSize="@dimen/text_normal"
-            android:checked="false"/>
-
     </LinearLayout>
 
 </FrameLayout>

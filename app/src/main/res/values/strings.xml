@@ -5,7 +5,6 @@
     <string name="home_title">Home</string>
     <string name="email">Email</string>
     <string name="password">Password</string>
-    <string name="forgot_password">Forgot Password</string>
-    <string name="remember_password">Remember Me</string>
-    <string name="city">Your city</string>
+    <string name="city">Enter your city</string>
+    <string name="search">Search</string>
 </resources>

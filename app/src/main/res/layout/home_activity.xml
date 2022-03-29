@@ -8,10 +8,11 @@
     <FrameLayout
         android:id="@+id/container"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="100dp"/>
+
     <FrameLayout
         android:id="@+id/layout_city"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/container"/>
+        android:layout_height="match_parent"/>
+
 </RelativeLayout>

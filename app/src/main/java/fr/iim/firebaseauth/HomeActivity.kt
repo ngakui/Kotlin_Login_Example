@@ -1,12 +1,13 @@
 package fr.iim.firebaseauth
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import fr.iim.firebaseauth.ui.search.SearchFragment
 import fr.iim.firebaseauth.ui.welcome.WelcomeFragment
 
-class HomeActivity : AppCompatActivity() {
+class HomeActivity : AppCompatActivity(), SearchFragment.SearchFragmentInterface {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,6 +22,14 @@ class HomeActivity : AppCompatActivity() {
                 .replace(R.id.layout_city, SearchFragment.newInstance())
                 .commitNow()
         }
+    }
+
+    override fun OnSearchClickListener(city: String) {
+        val intent = Intent(this@HomeActivity, MapsActivity::class.java).apply {
+            Log.d("SearchButtonClick", city)
+            putExtra("CITY_NAME",city)
+        }
+        startActivity(intent)
     }
 
 

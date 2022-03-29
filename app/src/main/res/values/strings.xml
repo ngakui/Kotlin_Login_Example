@@ -7,4 +7,5 @@
     <string name="password">Password</string>
     <string name="city">Enter your city</string>
     <string name="search">Search</string>
+    <string name="title_activity_maps">MapsActivity</string>
 </resources>

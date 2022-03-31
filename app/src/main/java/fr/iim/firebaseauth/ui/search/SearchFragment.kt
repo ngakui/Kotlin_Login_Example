@@ -14,6 +14,7 @@ import android.widget.EditText
 import android.widget.TextView
 import fr.iim.firebaseauth.HomeActivity
 import fr.iim.firebaseauth.R
+import fr.iim.firebaseauth.service.GoogleMapService
 import fr.iim.firebaseauth.ui.form.FormFragment
 
 class SearchFragment : Fragment() {
@@ -41,6 +42,7 @@ class SearchFragment : Fragment() {
 
         view.findViewById<Button>(R.id.search_city).setOnClickListener{
             Log.d("SearchFragment", "Button Clicked")
+            //GoogleMapService().getCity(view.findViewById<EditText>(R.id.city_search).text.toString())
             listener.OnSearchClickListener(
                 view.findViewById<EditText>(R.id.city_search).text.toString()
             )
@@ -55,8 +57,6 @@ class SearchFragment : Fragment() {
         else{
             throw RuntimeException("$context must implement")
         }
-
-
     }
 
 }

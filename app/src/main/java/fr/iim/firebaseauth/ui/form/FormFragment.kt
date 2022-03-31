@@ -11,9 +11,7 @@ import android.util.Patterns
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.EditText
-import android.widget.TextView
+import android.widget.*
 import androidx.fragment.app.Fragment
 import fr.iim.firebaseauth.R
 import java.util.regex.Pattern.compile
@@ -68,6 +66,7 @@ class FormFragment : Fragment() {
                 if (!isValid) {
                     editText.error = "Invalid Email"
                     mail = false
+                    button.isEnabled = false
                 } else {
                     editText.error === null
                     mail = true
@@ -100,6 +99,7 @@ class FormFragment : Fragment() {
                                             "\n1 special character," +
                                             "\n1 number"
                         password = false
+                        button.isEnabled = false
                     }
                 }
             }
@@ -107,13 +107,16 @@ class FormFragment : Fragment() {
 
             }
         })
-
+        val checkBox: CheckBox = view.findViewById(R.id.form_check)
         view.findViewById<Button>(R.id.login_button).setOnClickListener{
             Log.d("FormFragment", "Button Clicked")
-            listener.OnHomeClickListener(
-                view.findViewById<TextView>(R.id.email).text.toString(),
-                view.findViewById<TextView>(R.id.password).text.toString()
-            )
+            if (checkBox.isChecked)
+                listener.OnHomeClickListener(
+                    view.findViewById<TextView>(R.id.email).text.toString(),
+                    view.findViewById<TextView>(R.id.password).text.toString()
+                )
+            else
+                Toast.makeText(context, "You must Accept terms and Conditions", Toast.LENGTH_LONG).show()
         }
 
     }

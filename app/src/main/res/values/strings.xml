@@ -8,4 +8,5 @@
     <string name="city">Enter your city</string>
     <string name="search">Search</string>
     <string name="title_activity_maps">MapsActivity</string>
+    <string name="accept_terms_and_conditions">Accept terms and conditions</string>
 </resources>

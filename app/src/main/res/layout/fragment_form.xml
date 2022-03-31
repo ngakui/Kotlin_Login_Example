@@ -48,6 +48,13 @@
             android:inputType="textPassword"
             android:autofillHints="Enter your password" />
 
+        <CheckBox
+            android:id="@+id/form_check"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/accept_terms_and_conditions"
+            android:layout_marginLeft="@dimen/size2"
+            android:layout_marginRight="@dimen/size2"/>
 
         <Button
 

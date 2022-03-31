@@ -1,6 +1,6 @@
 # Kotlin Login Example
 
-A simple login interface make with KotlinLang.
+A simple login interface made with [KotlinLang](https://kotlinlang.org/docs/getting-started.html).
 
 <img src="https://github.com/ngakui/Kotlin_Login_Example/blob/main/captures/1.png" alt="Login" width="200"/>   <img src="https://github.com/ngakui/Kotlin_Login_Example/blob/main/captures/2.png" alt="Login Error" width="200"/>  <img src="https://github.com/ngakui/Kotlin_Login_Example/blob/main/captures/3.png" alt="Login Error" width="200"/>  <img src="https://github.com/ngakui/Kotlin_Login_Example/blob/main/captures/4.png" alt="Login Error" width="200"/>  <img src="https://github.com/ngakui/Kotlin_Login_Example/blob/main/captures/5.png" alt="Login Error" width="200"/>  <img src="https://github.com/ngakui/Kotlin_Login_Example/blob/main/captures/6.png" alt="Login Error" width="200"/>
 
@@ -15,4 +15,5 @@ A simple login interface make with KotlinLang.
 
 ## Installation
 
-* Clone the github repository: `git clone https://github.com/ngakui/Kotlin_Login_Example`
+* Clone the github repository: `git clone git@github.com:ngakui/Kotlin_Login_Example.git`
+* Open it in android studio and run app

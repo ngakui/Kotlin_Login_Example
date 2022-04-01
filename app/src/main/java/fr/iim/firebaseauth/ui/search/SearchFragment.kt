@@ -21,6 +21,7 @@ class SearchFragment : Fragment() {
 
     companion object {
         fun newInstance() = SearchFragment()
+        var SEARCH_NAME = "SEARCH_NAME"
     }
 
     private lateinit var viewModel: SearchViewModel
@@ -43,6 +44,7 @@ class SearchFragment : Fragment() {
         view.findViewById<Button>(R.id.search_city).setOnClickListener{
             Log.d("SearchFragment", "Button Clicked")
             //GoogleMapService().getCity(view.findViewById<EditText>(R.id.city_search).text.toString())
+            SEARCH_NAME = view.findViewById<EditText>(R.id.city_search).text.toString()
             listener.OnSearchClickListener(
                 view.findViewById<EditText>(R.id.city_search).text.toString()
             )

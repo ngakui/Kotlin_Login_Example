@@ -1,5 +1,7 @@
 package fr.iim.firebaseauth
 
+import android.annotation.SuppressLint
+import android.location.Geocoder
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 
@@ -7,6 +9,7 @@ import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
+import com.google.android.gms.maps.model.BitmapDescriptorFactory
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 import fr.iim.firebaseauth.databinding.ActivityMapsBinding
@@ -37,12 +40,22 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
      * it inside the SupportMapFragment. This method will only be triggered once the user has
      * installed Google Play services and returned to the app.
      */
+    @SuppressLint("StringFormatInvalid")
     override fun onMapReady(googleMap: GoogleMap) {
         mMap = googleMap
 
-        // Add a marker in Sydney and move the camera
-        val sydney = LatLng(37.7272, -123.032)
-        mMap.addMarker(MarkerOptions().position(sydney).title("Marker in San Francisco"))
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney))
+        val city: String? = intent.getStringExtra("CITY_NAME")
+        val geocoder = Geocoder(this)
+        val location = geocoder.getFromLocationName(city, 1)
+        val longitude: Double = location[0].longitude
+        val latitude: Double = location[0].latitude
+
+        // Add a marker on city and move the camera
+        val point = LatLng(latitude, longitude)
+        mMap.addMarker(
+            MarkerOptions().position(point).title(getString(R.string.map_pointer_template, city))
+        )?.setIcon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_ROSE))
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(point))
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(point, 12f))
     }
 }
